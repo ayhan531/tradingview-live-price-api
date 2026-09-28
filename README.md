@@ -21,6 +21,27 @@ Bu proje, videodaki **171 adet hisse, kripto, emtia, forex ve endeks** varlığ�
 6. **Render.com Yayınına Tam Hazır:**
    - `render.yaml`, `Procfile`, `requirements.txt` ve `Dockerfile` hazırlandı.
 
+## 🔐 Güvenlik & API Anahtarı (Şifre Koruması)
+
+Tüm API uç noktaları yetkisiz erişime karşı şifrelenmiştir. API isteklerinde şu üç yöntemden birini kullanmanız gerekmektedir:
+
+- **API Anahtarı / Şifreniz:** `8505050Cc.Mm`
+
+### Nasıl Gönderilir?
+1. **HTTP Header (Önerilen):**
+   ```http
+   x-api-key: 8505050Cc.Mm
+   ```
+2. **URL Query Parametresi:**
+   ```
+   https://tradingview-price-api.onrender.com/api/prices?api_key=8505050Cc.Mm
+   ```
+3. **Bearer Token:**
+   ```http
+   Authorization: Bearer 8505050Cc.Mm
+   ```
+*(Geçersiz veya eksik şifre durumunda API `401 Unauthorized` yanıtı döner).*
+
 ---
 
 ## 🛠️ Yerel Çalıştırma (Localhost)

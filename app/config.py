@@ -11,3 +11,7 @@ HOST = os.environ.get("HOST", "0.0.0.0")
 
 # Fiyat güncelleme periyodu (saniye) - Kullanıcı isteği doğrultusunda 10 saniye
 UPDATE_INTERVAL_SECONDS = int(os.environ.get("UPDATE_INTERVAL_SECONDS", 10))
+
+# Güvenlik API Anahtarı (Şifre)
+API_KEY = os.environ.get("API_KEY", "8505050Cc.Mm")
+

@@ -718,7 +718,14 @@
       </div>
 
       <div class="header-actions">
-        <a href="/api/prices" target="_blank" class="btn btn-outline" title="Render API çıktısı">
+        <div style="display: flex; align-items: center; gap: 8px; background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.3); border-radius: 8px; padding: 6px 12px;">
+          <i class="fa-solid fa-key" style="color: #60a5fa; font-size: 13px;"></i>
+          <input type="password" id="ui-api-key" placeholder="API Key / Şifre" style="background: transparent; border: none; outline: none; color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 12px; width: 130px;" title="API Anahtarı">
+          <button onclick="saveApiKeyFromInput()" class="btn-icon" style="width: 24px; height: 24px;" title="Şifreyi Kaydet">
+            <i class="fa-solid fa-check" style="font-size: 10px; color: var(--green);"></i>
+          </button>
+        </div>
+        <a href="/api/prices?api_key=8505050Cc.Mm" target="_blank" class="btn btn-outline" title="Render API çıktısı">
           <i class="fa-solid fa-code"></i> JSON API (/api/prices)
         </a>
         <a href="/docs" target="_blank" class="btn btn-outline" title="Swagger Dokümantasyonu">
@@ -914,8 +921,24 @@
     let countdownRemaining = 10;
     let countdownInterval = null;
 
+    function getApiKey() {
+      return localStorage.getItem('tv_api_key') || '8505050Cc.Mm';
+    }
+
+    function saveApiKeyFromInput() {
+      const val = document.getElementById('ui-api-key').value.trim();
+      if (val) {
+        localStorage.setItem('tv_api_key', val);
+        showToast('API Anahtarı kaydedildi!', 'success');
+        fetchPrices();
+      }
+    }
+
     // --- BAŞLATMA ---
     window.addEventListener('DOMContentLoaded', () => {
+      const savedKey = getApiKey();
+      document.getElementById('ui-api-key').value = savedKey;
+
       fetchPrices();
       startCountdown();
       // Her 10 saniyede bir otomatik veri çek
@@ -939,7 +962,13 @@
     // --- FİYATLARI ÇEK ---
     async function fetchPrices() {
       try {
-        const res = await fetch('/api/prices');
+        const res = await fetch('/api/prices', {
+          headers: { 'x-api-key': getApiKey() }
+        });
+        if (res.status === 401) {
+          showToast('Yetkisiz: API Anahtarı hatalı! Üst kısımdan doğru şifreyi girin.', 'error');
+          return;
+        }
         if (!res.ok) throw new Error('API Hatası: ' + res.status);
         const json = await res.json();
         if (json.success && json.data) {
@@ -1099,7 +1128,9 @@
       resultsBox.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 20px; color: var(--text-muted);"><i class="fa-solid fa-spinner fa-spin"></i> TradingView üzerinde aranıyor...</div>';
 
       try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+        const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`, {
+          headers: { 'x-api-key': getApiKey() }
+        });
         const json = await res.json();
 
         if (json.success && json.results && json.results.length > 0) {
@@ -1142,7 +1173,10 @@
       try {
         const res = await fetch('/api/symbols', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'x-api-key': getApiKey()
+          },
           body: JSON.stringify({
             tv_ticker: ticker,
             display_name: desc || ticker,
@@ -1191,7 +1225,10 @@
       try {
         const res = await fetch(`/api/symbols/${encodeURIComponent(id)}/name`, {
           method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'x-api-key': getApiKey()
+          },
           body: JSON.stringify({ name: newName })
         });
         const json = await res.json();
@@ -1215,7 +1252,8 @@
 
       try {
         const res = await fetch(`/api/symbols/${encodeURIComponent(id)}`, {
-          method: 'DELETE'
+          method: 'DELETE',
+          headers: { 'x-api-key': getApiKey() }
         });
         const json = await res.json();
         if (json.success) {
@@ -1235,7 +1273,10 @@
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Yenileniyor...';
       try {
-        await fetch('/api/refresh', { method: 'POST' });
+        await fetch('/api/refresh', { 
+          method: 'POST',
+          headers: { 'x-api-key': getApiKey() }
+        });
         await fetchPrices();
         countdownRemaining = 10;
         showToast('Fiyatlar TradingView\'den anlık olarak çekildi.', 'success');
@@ -1253,7 +1294,10 @@
         return;
       }
       try {
-        const res = await fetch('/api/symbols/reset', { method: 'POST' });
+        const res = await fetch('/api/symbols/reset', { 
+          method: 'POST',
+          headers: { 'x-api-key': getApiKey() }
+        });
         const json = await res.json();
         if (json.success) {
           showToast(json.message, 'success');
