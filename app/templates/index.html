@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradingView Canlı Fiyat & Yönetim Paneli</title>
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-primary: #0b0e14;
+      --bg-secondary: #121824;
+      --bg-card: #182234;
+      --bg-card-hover: #1f2b42;
+      --border-color: #27354f;
+      --accent-blue: #2563eb;
+      --accent-blue-hover: #1d4ed8;
+      --accent-cyan: #06b6d4;
+      --green: #10b981;
+      --green-bg: rgba(16, 185, 129, 0.12);
+      --red: #ef4444;
+      --red-bg: rgba(239, 68, 68, 0.12);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+
+    .brand-title h1 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+    }
+
+    .brand-title p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--accent-blue-hover);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+    .btn-outline:hover {
+      background: var(--bg-card);
+      border-color: var(--accent-cyan);
+    }
+
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+    }
+    .btn-danger:hover {
+      background: rgba(239, 68, 68, 0.3);
+    }
+
+    .btn-success {
+      background: var(--green);
+      color: #fff;
+    }
+    .btn-success:hover {
+      background: #059669;
+    }
+
+    /* STATS CARDS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .stat-blue { background: rgba(37, 99, 235, 0.15); color: #60a5fa; }
+    .stat-green { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+    .stat-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+    .stat-yellow { background: rgba(234, 179, 8, 0.15); color: #facc15; }
+
+    .stat-info h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-info p {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+
+    /* LIVE PULSE BAR */
+    .pulse-container {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pulse-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 10px var(--green);
+      animation: blink 1.4s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .progress-bar-bg {
+      flex: 1;
+      max-width: 250px;
+      height: 6px;
+      background: var(--bg-card);
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 0 16px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, #2563eb, #06b6d4);
+      transition: width 1s linear;
+    }
+
+    /* TRADINGVIEW SEARCH SECTION */
+    .search-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .search-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .search-header h2 {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .search-input-group {
+      display: flex;
+      gap: 12px;
+    }
+
+    .search-input {
+      flex: 1;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-blue);
+    }
+
+    .search-results {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 12px;
+      max-height: 340px;
+      overflow-y: auto;
+    }
+
+    .search-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+
+    .search-item:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    .search-item-info .ticker-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      color: #38bdf8;
+      font-size: 13px;
+    }
+
+    .search-item-info .ticker-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .search-item-info .ticker-meta {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* CONTROLS & FILTERS */
+    .table-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-tab.active, .filter-tab:hover {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: #fff;
+    }
+
+    .table-search {
+      position: relative;
+      min-width: 260px;
+    }
+
+    .table-search i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+    }
+
+    .table-search input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 9px 12px 9px 36px;
+      color: #fff;
+      font-size: 13px;
+      outline: none;
+    }
+
+    /* TABLE */
+    .table-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      max-height: 700px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    thead th {
+      background: #0f1522;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid rgba(39, 53, 79, 0.4);
+      transition: background-color 0.15s;
+    }
+
+    tbody tr:hover {
+      background-color: var(--bg-card);
+    }
+
+    td {
+      padding: 12px 16px;
+      font-size: 13px;
+      vertical-align: middle;
+    }
+
+    .col-num {
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      width: 50px;
+    }
+
+    .name-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .display-name {
+      font-weight: 700;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .original-tag {
+      font-size: 11px;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .tv-ticker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.08);
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .price-cell {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      transition: color 0.4s ease, background-color 0.4s ease;
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .price-flash-green {
+      background-color: rgba(16, 185, 129, 0.3) !important;
+      color: #34d399 !important;
+    }
+
+    .price-flash-red {
+      background-color: rgba(239, 68, 68, 0.3) !important;
+      color: #f87171 !important;
+    }
+
+    .badge-change {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .badge-green {
+      background: var(--green-bg);
+      color: var(--green);
+    }
+
+    .badge-red {
+      background: var(--red-bg);
+      color: var(--red);
+    }
+
+    .range-info {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .time-tag {
+      font-size: 12px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .row-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-icon:hover {
+      background: var(--bg-card);
+      color: #fff;
+    }
+
+    .btn-icon-edit:hover {
+      border-color: var(--accent-blue);
+      color: #60a5fa;
+    }
+
+    .btn-icon-delete:hover {
+      border-color: var(--red);
+      color: #f87171;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      width: 90%;
+      max-width: 480px;
+      padding: 26px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .modal-header h3 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 11px 14px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--accent-blue);
+    }
+
+    .modal-hint {
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 12px;
+      color: #93c5fd;
+      line-height: 1.4;
+      margin-top: 12px;
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    /* TOAST */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toast {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-blue);
+      padding: 14px 18px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 13px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: slideIn 0.3s ease;
+    }
+
+    .toast-success { border-left-color: var(--green); }
+    .toast-error { border-left-color: var(--red); }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div class="brand-title">
+          <h1>TradingView Canlı Fiyat Paneli & API</h1>
+          <p>Her 10 saniyede bir otomatik güncellenen gerçek zamanlı borsa ve piyasa verileri</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <a href="/api/prices" target="_blank" class="btn btn-outline" title="Render API çıktısı">
+          <i class="fa-solid fa-code"></i> JSON API (/api/prices)
+        </a>
+        <a href="/docs" target="_blank" class="btn btn-outline" title="Swagger Dokümantasyonu">
+          <i class="fa-solid fa-book"></i> Swagger Docs
+        </a>
+        <button onclick="triggerRefresh()" class="btn btn-primary" id="btn-manual-refresh">
+          <i class="fa-solid fa-arrows-rotate"></i> Hemen Yenile
+        </button>
+        <button onclick="confirmReset()" class="btn btn-danger" title="Videodaki orijinal 171 sembole geri dön">
+          <i class="fa-solid fa-rotate-left"></i> Orijinal Listeye Dön (171)
+        </button>
+      </div>
+    </header>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon stat-blue">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="stat-info">
+          <h3 id="stat-total-count">0</h3>
+          <p>Takip Edilen Varlık</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon stat-green">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+        </div>
+        <div class="stat-info">
+          <h3 id="stat-up-count">0</h3>
+          <p>Yükselenler (Bugün)</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon stat-purple">
+          <i class="fa-solid fa-arrow-trend-down"></i>
+        </div>
+        <div class="stat-info">
+          <h3 id="stat-down-count">0</h3>
+          <p>Düşenler (Bugün)</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon stat-yellow">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="stat-info">
+          <h3 style="font-size: 15px; color: #facc15;">Kapanış Fiyatı Koruma</h3>
+          <p>Borsa Kapalıysa Son Fiyat Kalır</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVE STATUS & COUNTDOWN -->
+    <div class="pulse-container">
+      <div class="pulse-status">
+        <div class="live-dot"></div>
+        <span>Canlı Yayın: <strong id="live-time">Bağlanıyor...</strong></span>
+      </div>
+
+      <div style="display: flex; align-items: center; font-size: 12px; color: var(--text-muted);">
+        <span>Sonraki Güncelleme:</span>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="countdown-bar"></div>
+        </div>
+        <span id="countdown-text" style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #fff;">10s</span>
+      </div>
+
+      <div style="font-size: 12px; color: var(--text-dim);">
+        <i class="fa-solid fa-server"></i> Render Deployment Uyumlu (FastAPI Backend)
+      </div>
+    </div>
+
+    <!-- TRADINGVIEW SEARCH & ADD SECTION -->
+    <div class="search-card">
+      <div class="search-header">
+        <i class="fa-solid fa-magnifying-glass" style="color: var(--accent-cyan);"></i>
+        <h2>TradingView İçerisinde Yeni Hisse / Kripto / Emtia Ara ve Ekle</h2>
+      </div>
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">
+        Arama kutusuna örneğin <strong>"thy"</strong>, <strong>"btc"</strong>, <strong>"eregl"</strong> veya <strong>"tesla"</strong> yazın. Sistem arka planda TradingView arama motorunu sorgular. İstediğinizi tek tıkla listeye ekleyin.
+      </p>
+
+      <div class="search-input-group">
+        <input type="text" id="tv-search-query" class="search-input" placeholder="TradingView sembolü ara (örn: thy, sasa, nvda, gold, eth)..." onkeydown="if(event.key === 'Enter') executeTVSearch()">
+        <button onclick="executeTVSearch()" class="btn btn-primary" id="btn-tv-search">
+          <i class="fa-solid fa-search"></i> TradingView'de Ara
+        </button>
+      </div>
+
+      <div id="search-results-box" class="search-results" style="display: none;"></div>
+    </div>
+
+    <!-- TABLE CONTROLS & FILTER -->
+    <div class="table-controls">
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="setCategoryFilter('all', this)">Tümü (<span id="count-all">0</span>)</button>
+        <button class="filter-tab" onclick="setCategoryFilter('Stock', this)">Hisseler (<span id="count-stocks">0</span>)</button>
+        <button class="filter-tab" onclick="setCategoryFilter('Forex', this)">Forex (<span id="count-forex">0</span>)</button>
+        <button class="filter-tab" onclick="setCategoryFilter('Crypto', this)">Kripto (<span id="count-crypto">0</span>)</button>
+        <button class="filter-tab" onclick="setCategoryFilter('Commodity', this)">Emtia / Maden (<span id="count-commodity">0</span>)</button>
+        <button class="filter-tab" onclick="setCategoryFilter('Index', this)">Endeksler (<span id="count-index">0</span>)</button>
+      </div>
+
+      <div class="table-search">
+        <i class="fa-solid fa-filter"></i>
+        <input type="text" id="table-filter-input" placeholder="Mevcut listede ara (isim, sembol)..." oninput="renderTable()">
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-card">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-num">#</th>
+              <th>ÖZEL İSİM (DISPLAY NAME)</th>
+              <th>ORİJİNAL ADI</th>
+              <th>TRADINGVIEW TICKER</th>
+              <th>KATEGORİ</th>
+              <th>ANLIK FİYAT</th>
+              <th>24S DEĞİŞİM</th>
+              <th>GÜN İÇİ ARALIK (L - H)</th>
+              <th>GÜNCELLEME</th>
+              <th style="text-align: right;">İŞLEMLER</th>
+            </tr>
+          </thead>
+          <tbody id="prices-table-body">
+            <tr>
+              <td colspan="10" style="text-align: center; padding: 40px; color: var(--text-muted);">
+                <i class="fa-solid fa-spinner fa-spin" style="font-size: 24px; margin-bottom: 10px;"></i><br>
+                Fiyatlar TradingView'den çekiliyor, lütfen bekleyin...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RENAME MODAL -->
+  <div class="modal-overlay" id="rename-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-pen-to-square" style="color: var(--accent-blue); margin-right: 8px;"></i>Hisse İsmini Değiştir</h3>
+        <button class="modal-close" onclick="closeRenameModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="modal-symbol-id">
+        
+        <div class="form-group">
+          <label>TradingView Ticker (Sabit Kalır)</label>
+          <input type="text" id="modal-tv-ticker" class="form-input" disabled style="background: rgba(0,0,0,0.3); color: #38bdf8; font-family: 'JetBrains Mono', monospace;">
+        </div>
+
+        <div class="form-group">
+          <label>Orijinal Adı</label>
+          <input type="text" id="modal-original-name" class="form-input" disabled style="background: rgba(0,0,0,0.3); color: var(--text-dim);">
+        </div>
+
+        <div class="form-group">
+          <label>Yeni Görünen İsim (Display Name)</label>
+          <input type="text" id="modal-new-name" class="form-input" placeholder="Örn: Benim BMW'm, Türk Hava Yolları">
+        </div>
+
+        <div class="modal-hint">
+          <i class="fa-solid fa-circle-info"></i>
+          <strong>Güvence:</strong> Görünen ismi değiştirdiğinizde TradingView sembolü (Ticker) kesinlikle bozulmaz. TradingView üzerinden fiyat çekilmeye kesintisiz devam edilir ve API çıktısında yeni isim görünür.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeRenameModal()">İptal</button>
+        <button class="btn btn-primary" onclick="saveNewName()">
+          <i class="fa-solid fa-check"></i> İsmi Kaydet
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script>
+    let allPricesData = [];
+    let currentCategory = 'all';
+    let previousPricesMap = {};
+    let countdownRemaining = 10;
+    let countdownInterval = null;
+
+    // --- BAŞLATMA ---
+    window.addEventListener('DOMContentLoaded', () => {
+      fetchPrices();
+      startCountdown();
+      // Her 10 saniyede bir otomatik veri çek
+      setInterval(() => {
+        fetchPrices();
+        countdownRemaining = 10;
+      }, 10000);
+    });
+
+    function startCountdown() {
+      if (countdownInterval) clearInterval(countdownInterval);
+      countdownInterval = setInterval(() => {
+        countdownRemaining -= 1;
+        if (countdownRemaining < 0) countdownRemaining = 10;
+        const pct = (countdownRemaining / 10) * 100;
+        document.getElementById('countdown-bar').style.width = pct + '%';
+        document.getElementById('countdown-text').textContent = countdownRemaining + 's';
+      }, 1000);
+    }
+
+    // --- FİYATLARI ÇEK ---
+    async function fetchPrices() {
+      try {
+        const res = await fetch('/api/prices');
+        if (!res.ok) throw new Error('API Hatası: ' + res.status);
+        const json = await res.json();
+        if (json.success && json.data) {
+          allPricesData = json.data;
+          updateStats(json.data);
+          renderTable();
+          if (json.last_updated) {
+            const d = new Date(json.last_updated);
+            document.getElementById('live-time').textContent = d.toLocaleTimeString('tr-TR');
+          }
+        }
+      } catch (err) {
+        console.error('Fiyat çekme hatası:', err);
+      }
+    }
+
+    // --- İSTATİSTİKLER ---
+    function updateStats(items) {
+      document.getElementById('stat-total-count').textContent = items.length;
+      let up = 0;
+      let down = 0;
+      let counts = { Stock: 0, Forex: 0, Crypto: 0, Commodity: 0, Index: 0 };
+
+      items.forEach(it => {
+        if (it.change > 0) up++;
+        else if (it.change < 0) down++;
+        const cat = it.category || 'Stock';
+        if (counts[cat] !== undefined) counts[cat]++;
+      });
+
+      document.getElementById('stat-up-count').textContent = up;
+      document.getElementById('stat-down-count').textContent = down;
+      document.getElementById('count-all').textContent = items.length;
+      document.getElementById('count-stocks').textContent = counts.Stock || 0;
+      document.getElementById('count-forex').textContent = counts.Forex || 0;
+      document.getElementById('count-crypto').textContent = counts.Crypto || 0;
+      document.getElementById('count-commodity').textContent = counts.Commodity || 0;
+      document.getElementById('count-index').textContent = counts.Index || 0;
+    }
+
+    // --- TABLO ÇİZİMİ ---
+    function renderTable() {
+      const tbody = document.getElementById('prices-table-body');
+      const filterText = document.getElementById('table-filter-input').value.toLowerCase().trim();
+
+      const filtered = allPricesData.filter(item => {
+        const matchesCategory = (currentCategory === 'all' || item.category === currentCategory);
+        if (!matchesCategory) return false;
+        if (!filterText) return true;
+        const nameMatch = (item.name || '').toLowerCase().includes(filterText);
+        const origMatch = (item.original_name || '').toLowerCase().includes(filterText);
+        const tickerMatch = (item.tv_ticker || '').toLowerCase().includes(filterText);
+        return nameMatch || origMatch || tickerMatch;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="10" style="text-align: center; padding: 30px; color: var(--text-muted);">
+              Aramanıza uygun sonuç bulunamadı.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      let html = '';
+      filtered.forEach((item, idx) => {
+        const prevPrice = previousPricesMap[item.id];
+        let flashClass = '';
+        if (prevPrice !== undefined && item.price !== undefined) {
+          if (item.price > prevPrice) flashClass = 'price-flash-green';
+          else if (item.price < prevPrice) flashClass = 'price-flash-red';
+        }
+        previousPricesMap[item.id] = item.price;
+
+        const isPositive = (item.change >= 0);
+        const changeBadgeClass = isPositive ? 'badge-green' : 'badge-red';
+        const changeIcon = isPositive ? '<i class="fa-solid fa-caret-up"></i>' : '<i class="fa-solid fa-caret-down"></i>';
+        const changePrefix = isPositive ? '+' : '';
+
+        const formattedPrice = item.price > 0 ? item.price.toLocaleString('en-US', { minimumFractionDigits: item.price < 1 ? 4 : 2, maximumFractionDigits: 6 }) : '0.00';
+
+        html += `
+          <tr id="row-${item.id}">
+            <td class="col-num">${idx + 1}</td>
+            <td>
+              <div class="name-wrapper">
+                <span class="display-name">${escapeHtml(item.name || item.original_name)}</span>
+                <button class="btn-icon btn-icon-edit" onclick="openRenameModal('${item.id}', '${escapeHtml(item.name)}', '${escapeHtml(item.original_name)}', '${escapeHtml(item.tv_ticker)}')" title="İsmi Değiştir">
+                  <i class="fa-solid fa-pencil" style="font-size: 11px;"></i>
+                </button>
+              </div>
+            </td>
+            <td>
+              <span class="original-tag">${escapeHtml(item.original_name || '-')}</span>
+            </td>
+            <td>
+              <span class="tv-ticker">${escapeHtml(item.tv_ticker)}</span>
+            </td>
+            <td>
+              <span style="font-size: 11px; color: var(--text-muted);">${escapeHtml(item.category || 'Stock')}</span>
+            </td>
+            <td>
+              <span class="price-cell ${flashClass}" id="price-${item.id}">${formattedPrice}</span>
+            </td>
+            <td>
+              <span class="badge-change ${changeBadgeClass}">
+                ${changeIcon} ${changePrefix}${item.change}%
+              </span>
+            </td>
+            <td>
+              <span class="range-info">L: ${item.low || '-'} &nbsp;|&nbsp; H: ${item.high || '-'}</span>
+            </td>
+            <td>
+              <span class="time-tag">${item.updated_at || '-'}</span>
+            </td>
+            <td style="text-align: right;">
+              <div class="row-actions" style="justify-content: flex-end;">
+                <button class="btn-icon btn-icon-edit" onclick="openRenameModal('${item.id}', '${escapeHtml(item.name)}', '${escapeHtml(item.original_name)}', '${escapeHtml(item.tv_ticker)}')" title="İsmi Değiştir">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="btn-icon btn-icon-delete" onclick="deleteSymbol('${item.id}', '${escapeHtml(item.name)}')" title="Listeden Kaldır">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        `;
+      });
+
+      tbody.innerHTML = html;
+    }
+
+    // --- KATEGORİ FİLTRESİ ---
+    function setCategoryFilter(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderTable();
+    }
+
+    // --- TRADINGVIEW CANLI ARAMA ---
+    async function executeTVSearch() {
+      const q = document.getElementById('tv-search-query').value.trim();
+      const resultsBox = document.getElementById('search-results-box');
+      const btn = document.getElementById('btn-tv-search');
+
+      if (!q) {
+        showToast('Lütfen aramak istediğiniz bir sembol yazın (örn: thy, apple, btc)', 'error');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Aranıyor...';
+      resultsBox.style.display = 'grid';
+      resultsBox.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 20px; color: var(--text-muted);"><i class="fa-solid fa-spinner fa-spin"></i> TradingView üzerinde aranıyor...</div>';
+
+      try {
+        const res = await fetch(`/api/search?q=${encodeURIComponent(q)}`);
+        const json = await res.json();
+
+        if (json.success && json.results && json.results.length > 0) {
+          let html = '';
+          json.results.forEach(s => {
+            html += `
+              <div class="search-item">
+                <div class="search-item-info">
+                  <div class="ticker-badge">${escapeHtml(s.ticker)}</div>
+                  <div class="ticker-desc">${escapeHtml(s.description)}</div>
+                  <div class="ticker-meta">Borsa: ${escapeHtml(s.exchange)} &bull; Tür: ${escapeHtml(s.type)} &bull; ${escapeHtml(s.currency)}</div>
+                </div>
+                <button class="btn btn-success" onclick="addFoundSymbol('${escapeHtml(s.ticker)}', '${escapeHtml(s.description)}', '${escapeHtml(s.type)}')">
+                  <i class="fa-solid fa-plus"></i> Ekle
+                </button>
+              </div>
+            `;
+          });
+          resultsBox.innerHTML = html;
+        } else {
+          resultsBox.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 20px; color: var(--text-muted);">TradingView üzerinde "${escapeHtml(q)}" ile eşleşen sonuç bulunamadı.</div>`;
+        }
+      } catch (err) {
+        resultsBox.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 20px; color: #ef4444;">Arama sırasında hata: ${err.message}</div>`;
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-search"></i> TradingView\'de Ara';
+      }
+    }
+
+    // --- BULUNAN SEMBOLÜ LİSTEYE EKLE ---
+    async function addFoundSymbol(ticker, desc, type) {
+      let category = 'Stock';
+      const t = (type || '').toLowerCase();
+      if (t.includes('crypto')) category = 'Crypto';
+      else if (t.includes('forex')) category = 'Forex';
+      else if (t.includes('commodity')) category = 'Commodity';
+      else if (t.includes('index')) category = 'Index';
+
+      try {
+        const res = await fetch('/api/symbols', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tv_ticker: ticker,
+            display_name: desc || ticker,
+            original_name: ticker,
+            category: category,
+            description: desc
+          })
+        });
+        const json = await res.json();
+        if (json.success) {
+          showToast(json.message, 'success');
+          document.getElementById('search-results-box').style.display = 'none';
+          document.getElementById('tv-search-query').value = '';
+          await fetchPrices();
+        } else {
+          showToast('Ekleme başarısız: ' + (json.detail || 'Bilinmeyen hata'), 'error');
+        }
+      } catch (err) {
+        showToast('Hata oluştu: ' + err.message, 'error');
+      }
+    }
+
+    // --- İSİM DEĞİŞTİRME MODALI ---
+    function openRenameModal(id, currentName, originalName, tvTicker) {
+      document.getElementById('modal-symbol-id').value = id;
+      document.getElementById('modal-tv-ticker').value = tvTicker;
+      document.getElementById('modal-original-name').value = originalName;
+      document.getElementById('modal-new-name').value = currentName;
+      document.getElementById('rename-modal').classList.add('active');
+      document.getElementById('modal-new-name').focus();
+    }
+
+    function closeRenameModal() {
+      document.getElementById('rename-modal').classList.remove('active');
+    }
+
+    async function saveNewName() {
+      const id = document.getElementById('modal-symbol-id').value;
+      const newName = document.getElementById('modal-new-name').value.trim();
+
+      if (!newName) {
+        showToast('Lütfen geçerli bir isim yazın!', 'error');
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/symbols/${encodeURIComponent(id)}/name`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: newName })
+        });
+        const json = await res.json();
+        if (json.success) {
+          showToast(json.message, 'success');
+          closeRenameModal();
+          await fetchPrices();
+        } else {
+          showToast('Güncelleme hatası: ' + (json.detail || 'Bilinmeyen'), 'error');
+        }
+      } catch (err) {
+        showToast('Bağlantı hatası: ' + err.message, 'error');
+      }
+    }
+
+    // --- SEMBOL SİLME ---
+    async function deleteSymbol(id, name) {
+      if (!confirm(`'${name}' hissesini takip listesinden kaldırmak istediğinize emin misiniz?`)) {
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/symbols/${encodeURIComponent(id)}`, {
+          method: 'DELETE'
+        });
+        const json = await res.json();
+        if (json.success) {
+          showToast(json.message, 'success');
+          await fetchPrices();
+        } else {
+          showToast('Silme hatası: ' + (json.detail || 'Bilinmeyen'), 'error');
+        }
+      } catch (err) {
+        showToast('Hata: ' + err.message, 'error');
+      }
+    }
+
+    // --- MANUEL YENİLEME ---
+    async function triggerRefresh() {
+      const btn = document.getElementById('btn-manual-refresh');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Yenileniyor...';
+      try {
+        await fetch('/api/refresh', { method: 'POST' });
+        await fetchPrices();
+        countdownRemaining = 10;
+        showToast('Fiyatlar TradingView\'den anlık olarak çekildi.', 'success');
+      } catch (e) {
+        showToast('Yenileme hatası: ' + e.message, 'error');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Hemen Yenile';
+      }
+    }
+
+    // --- ORİJİNAL LİSTEYE DÖN ---
+    async function confirmReset() {
+      if (!confirm('Tüm listeyi videodaki orijinal 171 hisse ve isimlerine sıfırlamak istediğinize emin misiniz?')) {
+        return;
+      }
+      try {
+        const res = await fetch('/api/symbols/reset', { method: 'POST' });
+        const json = await res.json();
+        if (json.success) {
+          showToast(json.message, 'success');
+          await fetchPrices();
+        }
+      } catch (err) {
+        showToast('Sıfırlama hatası: ' + err.message, 'error');
+      }
+    }
+
+    // --- TOAST MESAJI ---
+    function showToast(msg, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = `toast toast-${type}`;
+      const icon = type === 'success' ? 'fa-check' : (type === 'error' ? 'fa-triangle-exclamation' : 'fa-circle-info');
+      toast.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${escapeHtml(msg)}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transition = 'opacity 0.4s ease';
+        setTimeout(() => toast.remove(), 400);
+      }, 3500);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/[&<>"']/g, function(m) {
+        return {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[m];
+      });
+    }
+  </script>
+</body>
+</html>

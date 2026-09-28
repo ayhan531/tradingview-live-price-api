@@ -1,0 +1,1370 @@
+[
+  {
+    "id": "golds",
+    "original_name": "GOLDs",
+    "display_name": "GOLDs",
+    "tv_ticker": "TVC:GOLD",
+    "category": "Commodity",
+    "description": "Gold Spot / US Dollar"
+  },
+  {
+    "id": "silver_s",
+    "original_name": "SILVER.s",
+    "display_name": "SILVER.s",
+    "tv_ticker": "TVC:SILVER",
+    "category": "Commodity",
+    "description": "Silver Spot / US Dollar"
+  },
+  {
+    "id": "ukoils",
+    "original_name": "UKOILs",
+    "display_name": "UKOILs",
+    "tv_ticker": "FX:UKOIL",
+    "category": "Commodity",
+    "description": "Brent Crude Oil"
+  },
+  {
+    "id": "btcusds",
+    "original_name": "BTCUSDs",
+    "display_name": "BTCUSDs",
+    "tv_ticker": "BINANCE:BTCUSDT",
+    "category": "Crypto",
+    "description": "Bitcoin / Tether"
+  },
+  {
+    "id": "nasdaqs",
+    "original_name": "NASDAQs",
+    "display_name": "NASDAQs",
+    "tv_ticker": "NASDAQ:NDX",
+    "category": "Index",
+    "description": "Nasdaq 100 Index"
+  },
+  {
+    "id": "daxs",
+    "original_name": "DAXs",
+    "display_name": "DAXs",
+    "tv_ticker": "XETR:DAX",
+    "category": "Index",
+    "description": "DAX 40 Index"
+  },
+  {
+    "id": "russ2000s",
+    "original_name": "RUSS2000s",
+    "display_name": "RUSS2000s",
+    "tv_ticker": "TVC:RUT",
+    "category": "Index",
+    "description": "Russell 2000 Index"
+  },
+  {
+    "id": "s_ps",
+    "original_name": "S&Ps",
+    "display_name": "S&Ps",
+    "tv_ticker": "SP:SPX",
+    "category": "Index",
+    "description": "S&P 500 Index"
+  },
+  {
+    "id": "swi20sx",
+    "original_name": "SWI20Sx",
+    "display_name": "SWI20Sx",
+    "tv_ticker": "SIX:SMI",
+    "category": "Index",
+    "description": "Swiss Market Index 20"
+  },
+  {
+    "id": "eurusds",
+    "original_name": "EURUSDs",
+    "display_name": "EURUSDs",
+    "tv_ticker": "FX:EURUSD",
+    "category": "Forex",
+    "description": "Euro / US Dollar"
+  },
+  {
+    "id": "adausds",
+    "original_name": "ADAUSDs",
+    "display_name": "ADAUSDs",
+    "tv_ticker": "BINANCE:ADAUSDT",
+    "category": "Crypto",
+    "description": "Cardano / Tether"
+  },
+  {
+    "id": "avaxusds",
+    "original_name": "AVAXUSDs",
+    "display_name": "AVAXUSDs",
+    "tv_ticker": "BINANCE:AVAXUSDT",
+    "category": "Crypto",
+    "description": "Avalanche / Tether"
+  },
+  {
+    "id": "bchusds",
+    "original_name": "BCHUSDs",
+    "display_name": "BCHUSDs",
+    "tv_ticker": "BINANCE:BCHUSDT",
+    "category": "Crypto",
+    "description": "Bitcoin Cash / Tether"
+  },
+  {
+    "id": "dogeusds",
+    "original_name": "DOGEUSDs",
+    "display_name": "DOGEUSDs",
+    "tv_ticker": "BINANCE:DOGEUSDT",
+    "category": "Crypto",
+    "description": "Dogecoin / Tether"
+  },
+  {
+    "id": "ethusds",
+    "original_name": "ETHUSDs",
+    "display_name": "ETHUSDs",
+    "tv_ticker": "BINANCE:ETHUSDT",
+    "category": "Crypto",
+    "description": "Ethereum / Tether"
+  },
+  {
+    "id": "ltcusds",
+    "original_name": "LTCUSDs",
+    "display_name": "LTCUSDs",
+    "tv_ticker": "BINANCE:LTCUSDT",
+    "category": "Crypto",
+    "description": "Litecoin / Tether"
+  },
+  {
+    "id": "solusds",
+    "original_name": "SOLUSDs",
+    "display_name": "SOLUSDs",
+    "tv_ticker": "BINANCE:SOLUSDT",
+    "category": "Crypto",
+    "description": "Solana / Tether"
+  },
+  {
+    "id": "xlmusds",
+    "original_name": "XLMUSDs",
+    "display_name": "XLMUSDs",
+    "tv_ticker": "BINANCE:XLMUSDT",
+    "category": "Crypto",
+    "description": "Stellar / Tether"
+  },
+  {
+    "id": "xrpusds",
+    "original_name": "XRPUSDs",
+    "display_name": "XRPUSDs",
+    "tv_ticker": "BINANCE:XRPUSDT",
+    "category": "Crypto",
+    "description": "XRP / Tether"
+  },
+  {
+    "id": "dxy",
+    "original_name": "DXY",
+    "display_name": "DXY",
+    "tv_ticker": "TVC:DXY",
+    "category": "Index",
+    "description": "US Dollar Currency Index"
+  },
+  {
+    "id": "alibaba",
+    "original_name": "Alibaba",
+    "display_name": "Alibaba",
+    "tv_ticker": "NYSE:BABA",
+    "category": "Stock",
+    "description": "Alibaba Group Holding Ltd"
+  },
+  {
+    "id": "pdd_holding",
+    "original_name": "PDD Holding",
+    "display_name": "PDD Holding",
+    "tv_ticker": "NASDAQ:PDD",
+    "category": "Stock",
+    "description": "PDD Holdings Inc (Pinduoduo)"
+  },
+  {
+    "id": "adidas",
+    "original_name": "Adidas",
+    "display_name": "Adidas",
+    "tv_ticker": "XETR:ADS",
+    "category": "Stock",
+    "description": "Adidas AG"
+  },
+  {
+    "id": "allianz",
+    "original_name": "Allianz",
+    "display_name": "Allianz",
+    "tv_ticker": "XETR:ALV",
+    "category": "Stock",
+    "description": "Allianz SE"
+  },
+  {
+    "id": "air_france_klm",
+    "original_name": "Air France-KLM",
+    "display_name": "Air France-KLM",
+    "tv_ticker": "EURONEXT:AF",
+    "category": "Stock",
+    "description": "Air France-KLM"
+  },
+  {
+    "id": "bmw",
+    "original_name": "BMW",
+    "display_name": "BMW",
+    "tv_ticker": "XETR:BMW",
+    "category": "Stock",
+    "description": "Bayerische Motoren Werke AG"
+  },
+  {
+    "id": "daimler",
+    "original_name": "Daimler",
+    "display_name": "Daimler",
+    "tv_ticker": "XETR:MBG",
+    "category": "Stock",
+    "description": "Mercedes-Benz Group AG"
+  },
+  {
+    "id": "danone",
+    "original_name": "Danone",
+    "display_name": "Danone",
+    "tv_ticker": "EURONEXT:BN",
+    "category": "Stock",
+    "description": "Danone SA"
+  },
+  {
+    "id": "banco_santander",
+    "original_name": "Banco Santander",
+    "display_name": "Banco Santander",
+    "tv_ticker": "BME:SAN",
+    "category": "Stock",
+    "description": "Banco Santander SA"
+  },
+  {
+    "id": "bnp_paribas",
+    "original_name": "BNP Paribas",
+    "display_name": "BNP Paribas",
+    "tv_ticker": "EURONEXT:BNP",
+    "category": "Stock",
+    "description": "BNP Paribas SA"
+  },
+  {
+    "id": "bayer",
+    "original_name": "Bayer",
+    "display_name": "Bayer",
+    "tv_ticker": "XETR:BAYN",
+    "category": "Stock",
+    "description": "Bayer AG"
+  },
+  {
+    "id": "commerzbank",
+    "original_name": "Commerzbank",
+    "display_name": "Commerzbank",
+    "tv_ticker": "XETR:CBK",
+    "category": "Stock",
+    "description": "Commerzbank AG"
+  },
+  {
+    "id": "deutsche_bank",
+    "original_name": "Deutsche Bank",
+    "display_name": "Deutsche Bank",
+    "tv_ticker": "XETR:DBK",
+    "category": "Stock",
+    "description": "Deutsche Bank AG"
+  },
+  {
+    "id": "deutsche_post",
+    "original_name": "Deutsche Post",
+    "display_name": "Deutsche Post",
+    "tv_ticker": "XETR:DHL",
+    "category": "Stock",
+    "description": "Deutsche Post AG / DHL Group"
+  },
+  {
+    "id": "iberdrola",
+    "original_name": "Iberdrola",
+    "display_name": "Iberdrola",
+    "tv_ticker": "BME:IBE",
+    "category": "Stock",
+    "description": "Iberdrola SA"
+  },
+  {
+    "id": "lufthansa",
+    "original_name": "Lufthansa",
+    "display_name": "Lufthansa",
+    "tv_ticker": "XETR:LHA",
+    "category": "Stock",
+    "description": "Deutsche Lufthansa AG"
+  },
+  {
+    "id": "ferrari",
+    "original_name": "Ferrari",
+    "display_name": "Ferrari",
+    "tv_ticker": "NYSE:RACE",
+    "category": "Stock",
+    "description": "Ferrari N.V."
+  },
+  {
+    "id": "louis_vuitton",
+    "original_name": "Louis Vuitton",
+    "display_name": "Louis Vuitton",
+    "tv_ticker": "EURONEXT:MC",
+    "category": "Stock",
+    "description": "LVMH Moet Hennessy Louis Vuitton"
+  },
+  {
+    "id": "mapfre",
+    "original_name": "Mapfre",
+    "display_name": "Mapfre",
+    "tv_ticker": "BME:MAP",
+    "category": "Stock",
+    "description": "Mapfre SA"
+  },
+  {
+    "id": "siemens",
+    "original_name": "Siemens",
+    "display_name": "Siemens",
+    "tv_ticker": "XETR:SIE",
+    "category": "Stock",
+    "description": "Siemens AG"
+  },
+  {
+    "id": "societegenerale",
+    "original_name": "SocieteGenerale",
+    "display_name": "SocieteGenerale",
+    "tv_ticker": "EURONEXT:GLE",
+    "category": "Stock",
+    "description": "Societe Generale SA"
+  },
+  {
+    "id": "teva",
+    "original_name": "Teva",
+    "display_name": "Teva",
+    "tv_ticker": "NYSE:TEVA",
+    "category": "Stock",
+    "description": "Teva Pharmaceutical Industries"
+  },
+  {
+    "id": "volkswagen",
+    "original_name": "Volkswagen",
+    "display_name": "Volkswagen",
+    "tv_ticker": "XETR:VOW3",
+    "category": "Stock",
+    "description": "Volkswagen AG"
+  },
+  {
+    "id": "telefonica",
+    "original_name": "Telefonica",
+    "display_name": "Telefonica",
+    "tv_ticker": "BME:TEF",
+    "category": "Stock",
+    "description": "Telefonica SA"
+  },
+  {
+    "id": "total",
+    "original_name": "Total",
+    "display_name": "Total",
+    "tv_ticker": "EURONEXT:TTE",
+    "category": "Stock",
+    "description": "TotalEnergies SE"
+  },
+  {
+    "id": "3m",
+    "original_name": "3M",
+    "display_name": "3M",
+    "tv_ticker": "NYSE:MMM",
+    "category": "Stock",
+    "description": "3M Company"
+  },
+  {
+    "id": "at_t",
+    "original_name": "AT&T",
+    "display_name": "AT&T",
+    "tv_ticker": "NYSE:T",
+    "category": "Stock",
+    "description": "AT&T Inc"
+  },
+  {
+    "id": "airbnb",
+    "original_name": "Airbnb",
+    "display_name": "Airbnb",
+    "tv_ticker": "NASDAQ:ABNB",
+    "category": "Stock",
+    "description": "Airbnb Inc"
+  },
+  {
+    "id": "american_al",
+    "original_name": "American AL",
+    "display_name": "American AL",
+    "tv_ticker": "NASDAQ:AAL",
+    "category": "Stock",
+    "description": "American Airlines Group"
+  },
+  {
+    "id": "americanexpress",
+    "original_name": "AmericanExpress",
+    "display_name": "AmericanExpress",
+    "tv_ticker": "NYSE:AXP",
+    "category": "Stock",
+    "description": "American Express Company"
+  },
+  {
+    "id": "biogen",
+    "original_name": "Biogen",
+    "display_name": "Biogen",
+    "tv_ticker": "NASDAQ:BIIB",
+    "category": "Stock",
+    "description": "Biogen Inc"
+  },
+  {
+    "id": "amazon",
+    "original_name": "Amazon",
+    "display_name": "Amazon",
+    "tv_ticker": "NASDAQ:AMZN",
+    "category": "Stock",
+    "description": "Amazon.com Inc"
+  },
+  {
+    "id": "apple",
+    "original_name": "Apple",
+    "display_name": "Apple",
+    "tv_ticker": "NASDAQ:AAPL",
+    "category": "Stock",
+    "description": "Apple Inc"
+  },
+  {
+    "id": "bank_of_america",
+    "original_name": "Bank of America",
+    "display_name": "Bank of America",
+    "tv_ticker": "NYSE:BAC",
+    "category": "Stock",
+    "description": "Bank of America Corp"
+  },
+  {
+    "id": "boeing",
+    "original_name": "Boeing",
+    "display_name": "Boeing",
+    "tv_ticker": "NYSE:BA",
+    "category": "Stock",
+    "description": "Boeing Company"
+  },
+  {
+    "id": "cvs_health",
+    "original_name": "CVS Health",
+    "display_name": "CVS Health",
+    "tv_ticker": "NYSE:CVS",
+    "category": "Stock",
+    "description": "CVS Health Corp"
+  },
+  {
+    "id": "chevron",
+    "original_name": "Chevron",
+    "display_name": "Chevron",
+    "tv_ticker": "NYSE:CVX",
+    "category": "Stock",
+    "description": "Chevron Corporation"
+  },
+  {
+    "id": "cisco_systems",
+    "original_name": "Cisco Systems",
+    "display_name": "Cisco Systems",
+    "tv_ticker": "NASDAQ:CSCO",
+    "category": "Stock",
+    "description": "Cisco Systems Inc"
+  },
+  {
+    "id": "citigroup",
+    "original_name": "Citigroup",
+    "display_name": "Citigroup",
+    "tv_ticker": "NYSE:C",
+    "category": "Stock",
+    "description": "Citigroup Inc"
+  },
+  {
+    "id": "coca_cola",
+    "original_name": "Coca-Cola",
+    "display_name": "Coca-Cola",
+    "tv_ticker": "NYSE:KO",
+    "category": "Stock",
+    "description": "The Coca-Cola Company"
+  },
+  {
+    "id": "expedia",
+    "original_name": "Expedia",
+    "display_name": "Expedia",
+    "tv_ticker": "NASDAQ:EXPE",
+    "category": "Stock",
+    "description": "Expedia Group Inc"
+  },
+  {
+    "id": "exxon_mobil",
+    "original_name": "Exxon Mobil",
+    "display_name": "Exxon Mobil",
+    "tv_ticker": "NYSE:XOM",
+    "category": "Stock",
+    "description": "Exxon Mobil Corp"
+  },
+  {
+    "id": "ford",
+    "original_name": "Ford",
+    "display_name": "Ford",
+    "tv_ticker": "NYSE:F",
+    "category": "Stock",
+    "description": "Ford Motor Company"
+  },
+  {
+    "id": "coinbase",
+    "original_name": "Coinbase",
+    "display_name": "Coinbase",
+    "tv_ticker": "NASDAQ:COIN",
+    "category": "Stock",
+    "description": "Coinbase Global Inc"
+  },
+  {
+    "id": "fedex",
+    "original_name": "FedEx",
+    "display_name": "FedEx",
+    "tv_ticker": "NYSE:FDX",
+    "category": "Stock",
+    "description": "FedEx Corporation"
+  },
+  {
+    "id": "general_motors",
+    "original_name": "General Motors",
+    "display_name": "General Motors",
+    "tv_ticker": "NYSE:GM",
+    "category": "Stock",
+    "description": "General Motors Company"
+  },
+  {
+    "id": "gilead_sciences",
+    "original_name": "Gilead Sciences",
+    "display_name": "Gilead Sciences",
+    "tv_ticker": "NASDAQ:GILD",
+    "category": "Stock",
+    "description": "Gilead Sciences Inc"
+  },
+  {
+    "id": "goldman_sachs",
+    "original_name": "Goldman Sachs",
+    "display_name": "Goldman Sachs",
+    "tv_ticker": "NYSE:GS",
+    "category": "Stock",
+    "description": "The Goldman Sachs Group Inc"
+  },
+  {
+    "id": "hp_inc",
+    "original_name": "HP Inc",
+    "display_name": "HP Inc",
+    "tv_ticker": "NYSE:HPQ",
+    "category": "Stock",
+    "description": "HP Inc"
+  },
+  {
+    "id": "ibm_corp",
+    "original_name": "IBM Corp",
+    "display_name": "IBM Corp",
+    "tv_ticker": "NYSE:IBM",
+    "category": "Stock",
+    "description": "International Business Machines Corp"
+  },
+  {
+    "id": "generalelectric",
+    "original_name": "GeneralElectric",
+    "display_name": "GeneralElectric",
+    "tv_ticker": "NYSE:GE",
+    "category": "Stock",
+    "description": "General Electric Company"
+  },
+  {
+    "id": "google",
+    "original_name": "Google",
+    "display_name": "Google",
+    "tv_ticker": "NASDAQ:GOOGL",
+    "category": "Stock",
+    "description": "Alphabet Inc (Google)"
+  },
+  {
+    "id": "hilton_hotels",
+    "original_name": "Hilton Hotels",
+    "display_name": "Hilton Hotels",
+    "tv_ticker": "NYSE:HLT",
+    "category": "Stock",
+    "description": "Hilton Worldwide Holdings Inc"
+  },
+  {
+    "id": "intel",
+    "original_name": "Intel",
+    "display_name": "Intel",
+    "tv_ticker": "NASDAQ:INTC",
+    "category": "Stock",
+    "description": "Intel Corporation"
+  },
+  {
+    "id": "jd_com",
+    "original_name": "JD.com",
+    "display_name": "JD.com",
+    "tv_ticker": "NASDAQ:JD",
+    "category": "Stock",
+    "description": "JD.com Inc"
+  },
+  {
+    "id": "johnson_johnson",
+    "original_name": "Johnson&Johnson",
+    "display_name": "Johnson&Johnson",
+    "tv_ticker": "NYSE:JNJ",
+    "category": "Stock",
+    "description": "Johnson & Johnson"
+  },
+  {
+    "id": "mastercard",
+    "original_name": "Mastercard",
+    "display_name": "Mastercard",
+    "tv_ticker": "NYSE:MA",
+    "category": "Stock",
+    "description": "Mastercard Incorporated"
+  },
+  {
+    "id": "mcdonald",
+    "original_name": "McDonald",
+    "display_name": "McDonald",
+    "tv_ticker": "NYSE:MCD",
+    "category": "Stock",
+    "description": "McDonald's Corporation"
+  },
+  {
+    "id": "jpmorgan",
+    "original_name": "JPMorgan",
+    "display_name": "JPMorgan",
+    "tv_ticker": "NYSE:JPM",
+    "category": "Stock",
+    "description": "JPMorgan Chase & Co"
+  },
+  {
+    "id": "mgm_resorts",
+    "original_name": "MGM Resorts",
+    "display_name": "MGM Resorts",
+    "tv_ticker": "NYSE:MGM",
+    "category": "Stock",
+    "description": "MGM Resorts International"
+  },
+  {
+    "id": "mcdonalds",
+    "original_name": "McDonald's",
+    "display_name": "McDonald's",
+    "tv_ticker": "NYSE:MCD",
+    "category": "Stock",
+    "description": "McDonald's Corporation"
+  },
+  {
+    "id": "meta_facebook",
+    "original_name": "Meta Facebook",
+    "display_name": "Meta Facebook",
+    "tv_ticker": "NASDAQ:META",
+    "category": "Stock",
+    "description": "Meta Platforms Inc"
+  },
+  {
+    "id": "microsoft",
+    "original_name": "Microsoft",
+    "display_name": "Microsoft",
+    "tv_ticker": "NASDAQ:MSFT",
+    "category": "Stock",
+    "description": "Microsoft Corporation"
+  },
+  {
+    "id": "moderna",
+    "original_name": "Moderna",
+    "display_name": "Moderna",
+    "tv_ticker": "NASDAQ:MRNA",
+    "category": "Stock",
+    "description": "Moderna Inc"
+  },
+  {
+    "id": "netflix",
+    "original_name": "Netflix",
+    "display_name": "Netflix",
+    "tv_ticker": "NASDAQ:NFLX",
+    "category": "Stock",
+    "description": "Netflix Inc"
+  },
+  {
+    "id": "nike",
+    "original_name": "Nike",
+    "display_name": "Nike",
+    "tv_ticker": "NYSE:NKE",
+    "category": "Stock",
+    "description": "Nike Inc"
+  },
+  {
+    "id": "oracle",
+    "original_name": "Oracle",
+    "display_name": "Oracle",
+    "tv_ticker": "NYSE:ORCL",
+    "category": "Stock",
+    "description": "Oracle Corporation"
+  },
+  {
+    "id": "nvidia",
+    "original_name": "NVIDIA",
+    "display_name": "NVIDIA",
+    "tv_ticker": "NASDAQ:NVDA",
+    "category": "Stock",
+    "description": "NVIDIA Corporation"
+  },
+  {
+    "id": "p_g",
+    "original_name": "P&G",
+    "display_name": "P&G",
+    "tv_ticker": "NYSE:PG",
+    "category": "Stock",
+    "description": "Procter & Gamble Company"
+  },
+  {
+    "id": "pepsi",
+    "original_name": "Pepsi",
+    "display_name": "Pepsi",
+    "tv_ticker": "NASDAQ:PEP",
+    "category": "Stock",
+    "description": "PepsiCo Inc"
+  },
+  {
+    "id": "pfizer",
+    "original_name": "Pfizer",
+    "display_name": "Pfizer",
+    "tv_ticker": "NYSE:PFE",
+    "category": "Stock",
+    "description": "Pfizer Inc"
+  },
+  {
+    "id": "pinterest",
+    "original_name": "Pinterest",
+    "display_name": "Pinterest",
+    "tv_ticker": "NYSE:PINS",
+    "category": "Stock",
+    "description": "Pinterest Inc"
+  },
+  {
+    "id": "paypal",
+    "original_name": "Paypal",
+    "display_name": "Paypal",
+    "tv_ticker": "NASDAQ:PYPL",
+    "category": "Stock",
+    "description": "PayPal Holdings Inc"
+  },
+  {
+    "id": "phillip_morris",
+    "original_name": "Phillip Morris",
+    "display_name": "Phillip Morris",
+    "tv_ticker": "NYSE:PM",
+    "category": "Stock",
+    "description": "Philip Morris International Inc"
+  },
+  {
+    "id": "snapchat",
+    "original_name": "Snapchat",
+    "display_name": "Snapchat",
+    "tv_ticker": "NYSE:SNAP",
+    "category": "Stock",
+    "description": "Snap Inc"
+  },
+  {
+    "id": "southwest_al",
+    "original_name": "Southwest AL",
+    "display_name": "Southwest AL",
+    "tv_ticker": "NYSE:LUV",
+    "category": "Stock",
+    "description": "Southwest Airlines Co"
+  },
+  {
+    "id": "starbucks",
+    "original_name": "Starbucks",
+    "display_name": "Starbucks",
+    "tv_ticker": "NASDAQ:SBUX",
+    "category": "Stock",
+    "description": "Starbucks Corporation"
+  },
+  {
+    "id": "tesla",
+    "original_name": "TESLA",
+    "display_name": "TESLA",
+    "tv_ticker": "NASDAQ:TSLA",
+    "category": "Stock",
+    "description": "Tesla Inc"
+  },
+  {
+    "id": "uber",
+    "original_name": "Uber",
+    "display_name": "Uber",
+    "tv_ticker": "NYSE:UBER",
+    "category": "Stock",
+    "description": "Uber Technologies Inc"
+  },
+  {
+    "id": "spacex",
+    "original_name": "SpaceX",
+    "display_name": "SpaceX",
+    "tv_ticker": "NYSE:DXYZ",
+    "category": "Stock",
+    "description": "Destiny Tech100 Inc (SpaceX Holder)"
+  },
+  {
+    "id": "the_home_depot",
+    "original_name": "The Home Depot",
+    "display_name": "The Home Depot",
+    "tv_ticker": "NYSE:HD",
+    "category": "Stock",
+    "description": "The Home Depot Inc"
+  },
+  {
+    "id": "visa",
+    "original_name": "Visa",
+    "display_name": "Visa",
+    "tv_ticker": "NYSE:V",
+    "category": "Stock",
+    "description": "Visa Inc"
+  },
+  {
+    "id": "walt_disney",
+    "original_name": "Walt Disney",
+    "display_name": "Walt Disney",
+    "tv_ticker": "NYSE:DIS",
+    "category": "Stock",
+    "description": "The Walt Disney Company"
+  },
+  {
+    "id": "zoom",
+    "original_name": "Zoom",
+    "display_name": "Zoom",
+    "tv_ticker": "NASDAQ:ZM",
+    "category": "Stock",
+    "description": "Zoom Video Communications Inc"
+  },
+  {
+    "id": "ebay",
+    "original_name": "eBay",
+    "display_name": "eBay",
+    "tv_ticker": "NASDAQ:EBAY",
+    "category": "Stock",
+    "description": "eBay Inc"
+  },
+  {
+    "id": "crudeoils",
+    "original_name": "CRUDEOILs",
+    "display_name": "CRUDEOILs",
+    "tv_ticker": "FX:USOIL",
+    "category": "Commodity",
+    "description": "WTI Crude Oil"
+  },
+  {
+    "id": "xngusd_s",
+    "original_name": "XNGUSD.s",
+    "display_name": "XNGUSD.s",
+    "tv_ticker": "NYMEX:NG1!",
+    "category": "Commodity",
+    "description": "Natural Gas"
+  },
+  {
+    "id": "chfsgds",
+    "original_name": "CHFSGDs",
+    "display_name": "CHFSGDs",
+    "tv_ticker": "FX_IDC:CHFSGD",
+    "category": "Forex",
+    "description": "Swiss Franc / Singapore Dollar"
+  },
+  {
+    "id": "eurnoks",
+    "original_name": "EURNOKs",
+    "display_name": "EURNOKs",
+    "tv_ticker": "FX_IDC:EURNOK",
+    "category": "Forex",
+    "description": "Euro / Norwegian Krone"
+  },
+  {
+    "id": "eurseks",
+    "original_name": "EURSEKs",
+    "display_name": "EURSEKs",
+    "tv_ticker": "FX_IDC:EURSEK",
+    "category": "Forex",
+    "description": "Euro / Swedish Krona"
+  },
+  {
+    "id": "eurzars",
+    "original_name": "EURZARs",
+    "display_name": "EURZARs",
+    "tv_ticker": "FX_IDC:EURZAR",
+    "category": "Forex",
+    "description": "Euro / South African Rand"
+  },
+  {
+    "id": "eursgds",
+    "original_name": "EURSGDs",
+    "display_name": "EURSGDs",
+    "tv_ticker": "FX_IDC:EURSGD",
+    "category": "Forex",
+    "description": "Euro / Singapore Dollar"
+  },
+  {
+    "id": "eurhkds",
+    "original_name": "EURHKDs",
+    "display_name": "EURHKDs",
+    "tv_ticker": "FX_IDC:EURHKD",
+    "category": "Forex",
+    "description": "Euro / Hong Kong Dollar"
+  },
+  {
+    "id": "eurtrys",
+    "original_name": "EURTRYs",
+    "display_name": "EURTRYs",
+    "tv_ticker": "FX:EURTRY",
+    "category": "Forex",
+    "description": "Euro / Turkish Lira"
+  },
+  {
+    "id": "gbpdkks",
+    "original_name": "GBPDKKs",
+    "display_name": "GBPDKKs",
+    "tv_ticker": "FX_IDC:GBPDKK",
+    "category": "Forex",
+    "description": "British Pound / Danish Krone"
+  },
+  {
+    "id": "gbpnoks",
+    "original_name": "GBPNOKs",
+    "display_name": "GBPNOKs",
+    "tv_ticker": "FX_IDC:GBPNOK",
+    "category": "Forex",
+    "description": "British Pound / Norwegian Krone"
+  },
+  {
+    "id": "gbpseks",
+    "original_name": "GBPSEKs",
+    "display_name": "GBPSEKs",
+    "tv_ticker": "FX_IDC:GBPSEK",
+    "category": "Forex",
+    "description": "British Pound / Swedish Krona"
+  },
+  {
+    "id": "gbpsgds",
+    "original_name": "GBPSGDs",
+    "display_name": "GBPSGDs",
+    "tv_ticker": "FX_IDC:GBPSGD",
+    "category": "Forex",
+    "description": "British Pound / Singapore Dollar"
+  },
+  {
+    "id": "nzdsgds",
+    "original_name": "NZDSGDs",
+    "display_name": "NZDSGDs",
+    "tv_ticker": "FX_IDC:NZDSGD",
+    "category": "Forex",
+    "description": "New Zealand Dollar / Singapore Dollar"
+  },
+  {
+    "id": "usdcnhs",
+    "original_name": "USDCNHs",
+    "display_name": "USDCNHs",
+    "tv_ticker": "FX:USDCNH",
+    "category": "Forex",
+    "description": "US Dollar / Offshore Chinese Yuan"
+  },
+  {
+    "id": "usdczks",
+    "original_name": "USDCZKs",
+    "display_name": "USDCZKs",
+    "tv_ticker": "FX_IDC:USDCZK",
+    "category": "Forex",
+    "description": "US Dollar / Czech Koruna"
+  },
+  {
+    "id": "usddkks",
+    "original_name": "USDDKKs",
+    "display_name": "USDDKKs",
+    "tv_ticker": "FX:USDDKK",
+    "category": "Forex",
+    "description": "US Dollar / Danish Krone"
+  },
+  {
+    "id": "usdhkds",
+    "original_name": "USDHKDs",
+    "display_name": "USDHKDs",
+    "tv_ticker": "FX:USDHKD",
+    "category": "Forex",
+    "description": "US Dollar / Hong Kong Dollar"
+  },
+  {
+    "id": "usdmxns",
+    "original_name": "USDMXNs",
+    "display_name": "USDMXNs",
+    "tv_ticker": "FX:USDMXN",
+    "category": "Forex",
+    "description": "US Dollar / Mexican Peso"
+  },
+  {
+    "id": "usdhufs",
+    "original_name": "USDHUFs",
+    "display_name": "USDHUFs",
+    "tv_ticker": "FX:USDHUF",
+    "category": "Forex",
+    "description": "US Dollar / Hungarian Forint"
+  },
+  {
+    "id": "usdnoks",
+    "original_name": "USDNOKs",
+    "display_name": "USDNOKs",
+    "tv_ticker": "FX:USDNOK",
+    "category": "Forex",
+    "description": "US Dollar / Norwegian Krone"
+  },
+  {
+    "id": "usdsgds",
+    "original_name": "USDSGDs",
+    "display_name": "USDSGDs",
+    "tv_ticker": "FX_IDC:USDSGD",
+    "category": "Forex",
+    "description": "US Dollar / Singapore Dollar"
+  },
+  {
+    "id": "usdseks",
+    "original_name": "USDSEKs",
+    "display_name": "USDSEKs",
+    "tv_ticker": "FX:USDSEK",
+    "category": "Forex",
+    "description": "US Dollar / Swedish Krona"
+  },
+  {
+    "id": "usdtrys",
+    "original_name": "USDTRYs",
+    "display_name": "USDTRYs",
+    "tv_ticker": "FX:USDTRY",
+    "category": "Forex",
+    "description": "US Dollar / Turkish Lira"
+  },
+  {
+    "id": "usdzars",
+    "original_name": "USDZARs",
+    "display_name": "USDZARs",
+    "tv_ticker": "FX:USDZAR",
+    "category": "Forex",
+    "description": "US Dollar / South African Rand"
+  },
+  {
+    "id": "audcads",
+    "original_name": "AUDCADs",
+    "display_name": "AUDCADs",
+    "tv_ticker": "FX:AUDCAD",
+    "category": "Forex",
+    "description": "Australian Dollar / Canadian Dollar"
+  },
+  {
+    "id": "audchfs",
+    "original_name": "AUDCHFs",
+    "display_name": "AUDCHFs",
+    "tv_ticker": "FX:AUDCHF",
+    "category": "Forex",
+    "description": "Australian Dollar / Swiss Franc"
+  },
+  {
+    "id": "audnzds",
+    "original_name": "AUDNZDs",
+    "display_name": "AUDNZDs",
+    "tv_ticker": "FX:AUDNZD",
+    "category": "Forex",
+    "description": "Australian Dollar / New Zealand Dollar"
+  },
+  {
+    "id": "audusds",
+    "original_name": "AUDUSDs",
+    "display_name": "AUDUSDs",
+    "tv_ticker": "FX:AUDUSD",
+    "category": "Forex",
+    "description": "Australian Dollar / US Dollar"
+  },
+  {
+    "id": "audjpys",
+    "original_name": "AUDJPYs",
+    "display_name": "AUDJPYs",
+    "tv_ticker": "FX:AUDJPY",
+    "category": "Forex",
+    "description": "Australian Dollar / Japanese Yen"
+  },
+  {
+    "id": "cadchfs",
+    "original_name": "CADCHFs",
+    "display_name": "CADCHFs",
+    "tv_ticker": "FX:CADCHF",
+    "category": "Forex",
+    "description": "Canadian Dollar / Swiss Franc"
+  },
+  {
+    "id": "chfjpys",
+    "original_name": "CHFJPYs",
+    "display_name": "CHFJPYs",
+    "tv_ticker": "FX:CHFJPY",
+    "category": "Forex",
+    "description": "Swiss Franc / Japanese Yen"
+  },
+  {
+    "id": "eurauds",
+    "original_name": "EURAUDs",
+    "display_name": "EURAUDs",
+    "tv_ticker": "FX:EURAUD",
+    "category": "Forex",
+    "description": "Euro / Australian Dollar"
+  },
+  {
+    "id": "eurchfs",
+    "original_name": "EURCHFs",
+    "display_name": "EURCHFs",
+    "tv_ticker": "FX:EURCHF",
+    "category": "Forex",
+    "description": "Euro / Swiss Franc"
+  },
+  {
+    "id": "cadjpys",
+    "original_name": "CADJPYs",
+    "display_name": "CADJPYs",
+    "tv_ticker": "FX:CADJPY",
+    "category": "Forex",
+    "description": "Canadian Dollar / Japanese Yen"
+  },
+  {
+    "id": "eurcads",
+    "original_name": "EURCADs",
+    "display_name": "EURCADs",
+    "tv_ticker": "FX:EURCAD",
+    "category": "Forex",
+    "description": "Euro / Canadian Dollar"
+  },
+  {
+    "id": "eurgbps",
+    "original_name": "EURGBPs",
+    "display_name": "EURGBPs",
+    "tv_ticker": "FX:EURGBP",
+    "category": "Forex",
+    "description": "Euro / British Pound"
+  },
+  {
+    "id": "eurjpys",
+    "original_name": "EURJPYs",
+    "display_name": "EURJPYs",
+    "tv_ticker": "FX:EURJPY",
+    "category": "Forex",
+    "description": "Euro / Japanese Yen"
+  },
+  {
+    "id": "eurnzds",
+    "original_name": "EURNZDs",
+    "display_name": "EURNZDs",
+    "tv_ticker": "FX:EURNZD",
+    "category": "Forex",
+    "description": "Euro / New Zealand Dollar"
+  },
+  {
+    "id": "gbpauds",
+    "original_name": "GBPAUDs",
+    "display_name": "GBPAUDs",
+    "tv_ticker": "FX:GBPAUD",
+    "category": "Forex",
+    "description": "British Pound / Australian Dollar"
+  },
+  {
+    "id": "gbpcads",
+    "original_name": "GBPCADs",
+    "display_name": "GBPCADs",
+    "tv_ticker": "FX:GBPCAD",
+    "category": "Forex",
+    "description": "British Pound / Canadian Dollar"
+  },
+  {
+    "id": "gbpchfs",
+    "original_name": "GBPCHFs",
+    "display_name": "GBPCHFs",
+    "tv_ticker": "FX:GBPCHF",
+    "category": "Forex",
+    "description": "British Pound / Swiss Franc"
+  },
+  {
+    "id": "gbpjpys",
+    "original_name": "GBPJPYs",
+    "display_name": "GBPJPYs",
+    "tv_ticker": "FX:GBPJPY",
+    "category": "Forex",
+    "description": "British Pound / Japanese Yen"
+  },
+  {
+    "id": "gbpnzds",
+    "original_name": "GBPNZDs",
+    "display_name": "GBPNZDs",
+    "tv_ticker": "FX:GBPNZD",
+    "category": "Forex",
+    "description": "British Pound / New Zealand Dollar"
+  },
+  {
+    "id": "nzdcads",
+    "original_name": "NZDCADs",
+    "display_name": "NZDCADs",
+    "tv_ticker": "FX:NZDCAD",
+    "category": "Forex",
+    "description": "New Zealand Dollar / Canadian Dollar"
+  },
+  {
+    "id": "nzdjpys",
+    "original_name": "NZDJPYs",
+    "display_name": "NZDJPYs",
+    "tv_ticker": "FX:NZDJPY",
+    "category": "Forex",
+    "description": "New Zealand Dollar / Japanese Yen"
+  },
+  {
+    "id": "gbpusds",
+    "original_name": "GBPUSDs",
+    "display_name": "GBPUSDs",
+    "tv_ticker": "FX:GBPUSD",
+    "category": "Forex",
+    "description": "British Pound / US Dollar"
+  },
+  {
+    "id": "nzdchfs",
+    "original_name": "NZDCHFs",
+    "display_name": "NZDCHFs",
+    "tv_ticker": "FX:NZDCHF",
+    "category": "Forex",
+    "description": "New Zealand Dollar / Swiss Franc"
+  },
+  {
+    "id": "nzdusds",
+    "original_name": "NZDUSDs",
+    "display_name": "NZDUSDs",
+    "tv_ticker": "FX:NZDUSD",
+    "category": "Forex",
+    "description": "New Zealand Dollar / US Dollar"
+  },
+  {
+    "id": "usdcads",
+    "original_name": "USDCADs",
+    "display_name": "USDCADs",
+    "tv_ticker": "FX:USDCAD",
+    "category": "Forex",
+    "description": "US Dollar / Canadian Dollar"
+  },
+  {
+    "id": "usdchfs",
+    "original_name": "USDCHFs",
+    "display_name": "USDCHFs",
+    "tv_ticker": "FX:USDCHF",
+    "category": "Forex",
+    "description": "US Dollar / Swiss Franc"
+  },
+  {
+    "id": "usdjpys",
+    "original_name": "USDJPYs",
+    "display_name": "USDJPYs",
+    "tv_ticker": "FX:USDJPY",
+    "category": "Forex",
+    "description": "US Dollar / Japanese Yen"
+  },
+  {
+    "id": "asx200s",
+    "original_name": "ASX200s",
+    "display_name": "ASX200s",
+    "tv_ticker": "ASX:XJO",
+    "category": "Index",
+    "description": "Australia S&P/ASX 200 Index"
+  },
+  {
+    "id": "china50s",
+    "original_name": "CHINA50s",
+    "display_name": "CHINA50s",
+    "tv_ticker": "FTSE:XIN9",
+    "category": "Index",
+    "description": "FTSE China A50 Index"
+  },
+  {
+    "id": "dows",
+    "original_name": "DOWs",
+    "display_name": "DOWs",
+    "tv_ticker": "DJ:DJI",
+    "category": "Index",
+    "description": "Dow Jones Industrial Average"
+  },
+  {
+    "id": "eur50s",
+    "original_name": "EUR50s",
+    "display_name": "EUR50s",
+    "tv_ticker": "STOXX:SX5E",
+    "category": "Index",
+    "description": "Euro Stoxx 50 Index"
+  },
+  {
+    "id": "fr40s",
+    "original_name": "FR40s",
+    "display_name": "FR40s",
+    "tv_ticker": "EURONEXT:PX1",
+    "category": "Index",
+    "description": "CAC 40 Index (France)"
+  },
+  {
+    "id": "ftses",
+    "original_name": "FTSEs",
+    "display_name": "FTSEs",
+    "tv_ticker": "FTSE:UKX",
+    "category": "Index",
+    "description": "FTSE 100 Index (UK)"
+  },
+  {
+    "id": "hk50s",
+    "original_name": "HK50s",
+    "display_name": "HK50s",
+    "tv_ticker": "HSI:HSI",
+    "category": "Index",
+    "description": "Hang Seng Index (Hong Kong)"
+  },
+  {
+    "id": "nikkeis",
+    "original_name": "NIKKEIs",
+    "display_name": "NIKKEIs",
+    "tv_ticker": "TVC:NI225",
+    "category": "Index",
+    "description": "Nikkei 225 Index (Japan)"
+  },
+  {
+    "id": "nasdaqbigconts",
+    "original_name": "NasdaqBigConts",
+    "display_name": "NasdaqBigConts",
+    "tv_ticker": "NASDAQ:NDX",
+    "category": "Index",
+    "description": "Nasdaq 100 Big Contracts"
+  },
+  {
+    "id": "sp35s",
+    "original_name": "SP35s",
+    "display_name": "SP35s",
+    "tv_ticker": "TVC:IBEX35",
+    "category": "Index",
+    "description": "IBEX 35 Index (Spain)"
+  },
+  {
+    "id": "silvers",
+    "original_name": "SILVERs",
+    "display_name": "SILVERs",
+    "tv_ticker": "TVC:SILVER",
+    "category": "Commodity",
+    "description": "Silver Spot / US Dollar"
+  },
+  {
+    "id": "xaueurs",
+    "original_name": "XAUEURs",
+    "display_name": "XAUEURs",
+    "tv_ticker": "CALC:XAUEUR",
+    "category": "Commodity",
+    "description": "Gold Spot / Euro"
+  },
+  {
+    "id": "xpdusds",
+    "original_name": "XPDUSDs",
+    "display_name": "XPDUSDs",
+    "tv_ticker": "TVC:PALLADIUM",
+    "category": "Commodity",
+    "description": "Palladium Spot / US Dollar"
+  },
+  {
+    "id": "xptusds",
+    "original_name": "XPTUSDs",
+    "display_name": "XPTUSDs",
+    "tv_ticker": "TVC:PLATINUM",
+    "category": "Commodity",
+    "description": "Platinum Spot / US Dollar"
+  }
+]
